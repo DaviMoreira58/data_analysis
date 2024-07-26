@@ -17,6 +17,7 @@ for colum in table.columns:
 filter = table['ligacoes_callcenter'] <= 4
 table = table[filter] # 36%
 
-
+filter = table['dias_atraso'] <= 20
+table = table[filter] # 26%
 
 
