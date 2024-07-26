@@ -20,4 +20,6 @@ table = table[filter] # 36%
 filter = table['dias_atraso'] <= 20
 table = table[filter] # 26%
 
+filter = table['duracao_contrato']!='Monthly'
+table = table[filter] # 18%
 
