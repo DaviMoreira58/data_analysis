@@ -8,10 +8,8 @@ table = pd.read_csv(db_file)
 
 table = table.drop(columns='CustomerID')
 
-print(table.info())
-
 table = table.dropna()
 
-print(table.info())
-
+print(table['cancelou'].value_counts())
+print(table['cancelou'].value_counts(normalize=True))
 
