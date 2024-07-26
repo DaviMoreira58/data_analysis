@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import plotly.express as px
 
 source = os.path.abspath('.')
 db_file = os.path.join(source, 'cancelamentos.csv')
@@ -10,6 +11,8 @@ table = table.drop(columns='CustomerID')
 
 table = table.dropna()
 
-print(table['cancelou'].value_counts())
-print(table['cancelou'].value_counts(normalize=True))
+for colum in table.columns:
+    graphic = px.histogram(table, x=colum, color='cancelou')
+    graphic.show()
+
 
