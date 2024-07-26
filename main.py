@@ -13,6 +13,10 @@ table = table.dropna()
 
 for colum in table.columns:
     graphic = px.histogram(table, x=colum, color='cancelou')
-    graphic.show()
+
+filter = table['ligacoes_callcenter'] <= 4
+table = table[filter] # 36%
+
+
 
 
